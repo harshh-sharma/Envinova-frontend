@@ -1,4 +1,5 @@
 import BusinessComponent from '@/components/Bussiness';
+import CrossShapeComponent from '@/components/CrossShap';
 import React from 'react';
 
 const FeaturesSection = () => {
@@ -48,6 +49,7 @@ const FeaturesSection = () => {
     </div>
        
        <BusinessComponent/>
+       <CrossShapeComponent/>
 
     </div>
   );
