@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    experimental: {
+      esmExternals: true, // Enable ES module support
+    },
+  };
+  
+  export default nextConfig;
+  
