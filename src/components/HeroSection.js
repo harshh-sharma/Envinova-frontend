@@ -1,7 +1,24 @@
-import React, { useState } from "react";
+import axiosInstance from "@/helpers/axiosInstance";
+import React, { useEffect, useState } from "react";
 
 const CustomCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const getHeroSectionContent = async () => {
+     try {
+      const response = await axiosInstance.get('/domain/6745a69fa4a240dce3cfcb68/');
+      console.log('response',response?.data);
+      
+     } catch (error) {
+      console.log(error);
+      
+     }
+  }
+
+  useEffect(() => {
+    getHeroSectionContent();
+  })
+
 
   const slides = [
     {
