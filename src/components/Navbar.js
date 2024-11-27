@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { getContents } from "@/store/slices/dataSlice";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const options = [
   {
@@ -25,6 +27,24 @@ const options = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const data = useSelector(store => store?.eninova.contents);
+  console.log("data--",data);
+  
+
+  const dispatch = useDispatch();
+
+  const getAllContent = async () => {
+      try {
+         dispatch(getContents('6745a69fa4a240dce3cfcb68'));
+      } catch (error) {
+        console.log(error);
+      }
+  }
+
+  useEffect(() => {
+    getAllContent();
+  },[])
 
   return (
     <div className="w-full bg-[rgb(254,254,254)] shadow-lg">

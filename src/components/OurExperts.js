@@ -1,21 +1,31 @@
+"use client";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const OurExperts = () => {
+  
+  const data = useSelector(store => store?.eninova?.contents)
+  const firstProfile = data?.find((item) => item?.title?.toLowerCase()?.includes('elon'));
+  const secondProfile = data?.find((item) => item?.title?.toLowerCase()?.includes('sundar'));
+
   const experts = [
     {
-      name: "John Doe",
+      name: firstProfile?.title ? firstProfile?.title : "John Doe",
       image:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600",
-      info: "Senior Software Engineer with 10+ years of experience in web development.",
+        firstProfile?.contentImage?.secure_url
+          ? firstProfile.contentImage.secure_url
+          : "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600",
+      info: firstProfile?.content ? firstProfile?.content : "Senior Software Engineer with 10+ years of experience in web development.",
     },
     {
-      name: "Jane Smith",
-      image:
+      name: secondProfile?.title ? secondProfile?.title : "Jane Smith",
+      image: secondProfile?.contentImage?.secure_url
+      ? secondProfile.contentImage.secure_url : 
         "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",
-      info: "UI/UX Designer with a passion for creating intuitive digital experiences.",
+      info: secondProfile?.content ? secondProfile?.content : "UI/UX Designer with a passion for creating intuitive digital experiences.",
     },
   ];
-
+  
   return (
     <div className="w-full p-10">
       {/* Heading */}

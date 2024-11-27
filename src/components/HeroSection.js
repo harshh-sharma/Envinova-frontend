@@ -1,24 +1,14 @@
 import axiosInstance from "@/helpers/axiosInstance";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const CustomCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const getHeroSectionContent = async () => {
-     try {
-      const response = await axiosInstance.get('/domain/6745a69fa4a240dce3cfcb68/');
-      console.log('response',response?.data);
-      
-     } catch (error) {
-      console.log(error);
-      
-     }
-  }
-
-  useEffect(() => {
-    getHeroSectionContent();
-  })
-
+  const data = useSelector(store => store?.eninova.contents);
+  const heroSectionData = data.find(item => item.title?.toLowerCase() === "hero-section");
+  
+  
 
   const slides = [
     {
@@ -67,7 +57,7 @@ const CustomCarousel = () => {
         <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
           <div className="text-center text-white px-4 md:px-12 max-w-2xl">
             <h2 className="text-xl md:text-3xl lg:text-4xl mb-6 text-[rgb(255,242,188)]">
-              {slides[currentSlide].text}
+              {heroSectionData ? heroSectionData?.content : slides[currentSlide].text}
             </h2>
             <div className="space-x-4">
               <a

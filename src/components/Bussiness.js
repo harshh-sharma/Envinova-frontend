@@ -1,15 +1,21 @@
+"use client";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const BusinessComponent = () => {
+  const data = useSelector(store => store?.eninova.contents);
+  const bussiness = data?.find((data) => data?.title?.includes('Business'));
+  
+
   return (
     <div className="py-16 px-6 bg-gray-100">
       {/* Heading Section */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
-          Business Solutions That Work for You
+          {bussiness ? bussiness?.title :'Business Solutions That Work for You'}
         </h2>
         <p className="mt-4 text-xl text-gray-600">
-          Innovative services and features to drive success.
+          {bussiness ? bussiness?.content : 'Innovative services and features to drive success.'}
         </p>
       </div>
 
