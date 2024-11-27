@@ -36,7 +36,7 @@ const Navbar = () => {
 
   const getAllContent = async () => {
       try {
-         dispatch(getContents('6745a69fa4a240dce3cfcb68'));
+         dispatch(getContents('6746caf59fa82535cc25fe0e'));
       } catch (error) {
         console.log(error);
       }
