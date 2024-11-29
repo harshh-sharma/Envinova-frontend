@@ -22,8 +22,6 @@ const dataSlice = createSlice({
     reducers:{},
     extraReducers:(builder) => {
         builder.addCase(getContents.fulfilled,(state,action) => {
-            console.log("actionPayload",action.payload);
-            
             state.contents = action.payload?.contents;
         })
     }

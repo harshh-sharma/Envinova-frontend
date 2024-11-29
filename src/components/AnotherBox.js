@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const AnotherBox = () => {
-  const data = useSelector(store => store?.eninova.contents);
+  const data = useSelector(store => store?.eninova?.contents);
     const contentData = data?.find((item) => item?.title.includes('Solar'));
     console.log('contentdata',contentData);
 

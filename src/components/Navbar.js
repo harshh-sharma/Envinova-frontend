@@ -28,7 +28,7 @@ const options = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const data = useSelector(store => store?.eninova.contents);
+  const data = useSelector(store => store?.eninova?.contents);
   console.log("data--",data);
   
 

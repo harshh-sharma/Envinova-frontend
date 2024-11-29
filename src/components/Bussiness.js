@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const BusinessComponent = () => {
-  const data = useSelector(store => store?.eninova.contents);
+  const data = useSelector(store => store?.eninova?.contents);
   const bussiness = data?.find((data) => data?.title?.includes('Business'));
   
 
