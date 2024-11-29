@@ -6,7 +6,7 @@ const CustomCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const data = useSelector(store => store?.eninova?.contents);
-  const heroSectionData = data.find(item => item.title?.toLowerCase() === "hero-section");
+  const heroSectionData = data && data?.find(item => item.title?.toLowerCase() === "hero-section");
   
   
 

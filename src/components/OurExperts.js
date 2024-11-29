@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 const OurExperts = () => {
   
   const data = useSelector(store => store?.eninova?.contents)
-  const firstProfile = data?.find((item) => item?.title?.toLowerCase()?.includes('elon'));
-  const secondProfile = data?.find((item) => item?.title?.toLowerCase()?.includes('sundar'));
+  const firstProfile = data && data?.find((item) => item?.title?.toLowerCase()?.includes('elon'));
+  const secondProfile = data && data?.find((item) => item?.title?.toLowerCase()?.includes('sundar'));
 
   const experts = [
     {

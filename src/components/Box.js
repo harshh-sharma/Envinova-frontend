@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const Box = ({isOverLaping}) => {
     const data = useSelector(store => store?.eninova?.contents);
-    const contentData = data?.find((item) => item?.title.includes('Solar'));
+    const contentData = data && data?.find((item) => item?.title?.includes('Solar'));
     console.log('contentdata',contentData);
     
 
