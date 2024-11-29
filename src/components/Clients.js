@@ -43,7 +43,12 @@ const ClientCarousel = () => {
       </div>
     </div>
 <div>
-<img src="https://images.pexels.com/photos/635279/pexels-photo-635279.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="w-full h-[400px]" />
+<img 
+  src="https://images.pexels.com/photos/635279/pexels-photo-635279.jpeg?auto=compress&cs=tinysrgb&w=600" 
+  alt="" 
+  className="w-full h-[400px] transition-transform duration-300 ease-in-out transform hover:scale-105 hover:brightness-90 hover:shadow-xl"
+/>
+
 </div>
 </div>
   );
